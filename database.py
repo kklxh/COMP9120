@@ -145,7 +145,7 @@ def findAdmissionsByCriteria(searchString):
     
     cursor = conn.cursor()
     try:
-        # 使用 Cursor 查找符合条件的入院记录
+        # Use Cursor to find admission records that meet the criteria
         query = '''
             SELECT A.admissionid AS admission_id, 
                    ATE.admissiontypename AS admission_type,
@@ -197,7 +197,7 @@ def addAdmission(type, department, patient, condition, admin):
 
     cursor = conn.cursor()
     try:
-        # 使用嵌套 SELECT 语句来插入新入院记录
+        # Using nested SELECT statements to insert new admission records
         query = '''
             INSERT INTO admission (admissiontype, department, patient, condition, administrator)
             VALUES (
